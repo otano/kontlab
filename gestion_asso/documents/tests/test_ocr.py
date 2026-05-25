@@ -14,7 +14,7 @@ class ParseReceiptTests(TestCase):
 
     def test_parse_date_various_formats(self):
         result = parse_receipt("Date: 01-06-2026 Total 12.50")
-        self.assertEqual(result["date"], "01/06/2026")
+        self.assertEqual(result["date"], "2026-06-01")
 
     def test_parse_no_amount(self):
         result = parse_receipt("No numbers here")

@@ -21,7 +21,13 @@ class DocumentUploadTest(TestCase):
         resp = self.client.post("/api/documents/upload/", {"category": "achat"})
         self.assertEqual(resp.status_code, 400)
 
-    @override_settings(ALLOWED_UPLOAD_MIMETYPES=["image/jpeg", "image/png"])
+    @override_settings(
+        ALLOWED_UPLOAD_MIMETYPES=["image/jpeg", "image/png"],
+        STORAGES={
+            "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+            "staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"},
+        },
+    )
     def test_upload_jpeg(self):
         img = io.BytesIO(b"fake-image-data")
         img.name = "test.jpg"

@@ -11,17 +11,20 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   garage:
-    image: dxflrs/garage:latest
+    image: dxflrs/garage:v2.3.0
     ports:
       - "3900:3900"
-      - "9000:9000"
+      - "3901:3901"
+      - "3902:3902"
+      - "3903:3903"
     environment:
-      GARAGE_ADMIN_TOKEN: kontlab-admin
-      GARAGE_METRICS_TOKEN: kontlab-metrics
+      GARAGE_DEFAULT_ACCESS_KEY: GKkontlab
+      GARAGE_DEFAULT_SECRET_KEY: kontlab-secret-key-123
+      GARAGE_DEFAULT_BUCKET: tmp-uploads
     volumes:
       - garage_data:/var/lib/garage
       - ./garage.toml:/etc/garage.toml:ro
-    command: ["garage", "server"]
+    command: ["/garage", "server", "--single-node", "--default-bucket"]
 
 volumes:
   pgdata:

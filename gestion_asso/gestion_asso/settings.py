@@ -124,6 +124,7 @@ AWS_S3_SIGNATURE_VERSION = "s3v4"
 AWS_S3_ADDRESSING_STYLE = "path"
 AWS_DEFAULT_ACL = "private"
 AWS_QUERYSTRING_EXPIRE = 900  # 15 min presigned URLs
+AWS_STORAGE_BUCKET_NAME = os.environ.get("GARAGE_BUCKET_TMP", "tmp-uploads")
 
 STORAGES = {
     "default": {
