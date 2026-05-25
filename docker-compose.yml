@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: kontlab
+      POSTGRES_USER: kontlab
+      POSTGRES_PASSWORD: kontlab
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  garage:
+    image: dxflrs/garage:latest
+    ports:
+      - "3900:3900"
+      - "9000:9000"
+    environment:
+      GARAGE_ADMIN_TOKEN: kontlab-admin
+      GARAGE_METRICS_TOKEN: kontlab-metrics
+    volumes:
+      - garage_data:/var/lib/garage
+      - ./garage.toml:/etc/garage.toml:ro
+    command: ["garage", "server"]
+
+volumes:
+  pgdata:
+  garage_data:

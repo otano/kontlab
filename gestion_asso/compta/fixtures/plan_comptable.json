@@ -1,0 +1,14 @@
+[
+  {"model": "compta.account", "pk": 1, "fields": {"code": "512000", "name": "Banque", "type": "treasury", "is_active": true}},
+  {"model": "compta.account", "pk": 2, "fields": {"code": "530000", "name": "Caisse", "type": "treasury", "is_active": true}},
+  {"model": "compta.account", "pk": 3, "fields": {"code": "606000", "name": "Achats", "type": "expense", "is_active": true}},
+  {"model": "compta.account", "pk": 4, "fields": {"code": "756000", "name": "Cotisations", "type": "income", "is_active": true}},
+  {"model": "compta.account", "pk": 5, "fields": {"code": "758000", "name": "Dons manuels", "type": "income", "is_active": true}},
+  {"model": "compta.account", "pk": 6, "fields": {"code": "612000", "name": "Redevances cr\u00e9dit-bail", "type": "expense", "is_active": true}},
+  {"model": "compta.account", "pk": 7, "fields": {"code": "601000", "name": "Achats de marchandises", "type": "expense", "is_active": true}},
+  {"model": "compta.account", "pk": 8, "fields": {"code": "625000", "name": "D\u00e9placements et missions", "type": "expense", "is_active": true}},
+  {"model": "compta.account", "pk": 9, "fields": {"code": "623000", "name": "Publicit\u00e9 et relations publiques", "type": "expense", "is_active": true}},
+  {"model": "compta.account", "pk": 10, "fields": {"code": "626000", "name": "Frais postaux et t\u00e9l\u00e9coms", "type": "expense", "is_active": true}},
+  {"model": "compta.account", "pk": 11, "fields": {"code": "627000", "name": "Services bancaires", "type": "expense", "is_active": true}},
+  {"model": "compta.account", "pk": 12, "fields": {"code": "101000", "name": "Fonds associatifs", "type": "equity", "is_active": true}}
+]
